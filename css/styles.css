@@ -1,0 +1,314 @@
+/*
+RESET CSS
+ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  font-size: 1.7rem;
+  line-height: 150%;
+  background: #feca57;
+  color: #333; }
+
+a {
+  text-decoration: none; }
+
+.displayBlock {
+  display: block; }
+
+@keyframes rotateLittle {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0); }
+  50% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
+  100% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0); } }
+.section-toss-coin {
+  display: none;
+  flex-flow: row wrap;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(51, 51, 51, 0.8);
+  width: 100%;
+  height: 100%;
+  transition: all 1s; }
+  .section-toss-coin h2 {
+    flex: 0 0 100%;
+    align-self: flex-end;
+    color: white;
+    font-size: 5rem;
+    text-align: center; }
+
+.section-game-board {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  width: 75%;
+  margin: auto;
+  background: #00d2d3;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4); }
+  .section-game-board h1 {
+    flex: 1 1 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    padding: 4rem 0; }
+  .section-game-board .start-btn-box {
+    flex: 1 1 100%;
+    text-align: center; }
+    .section-game-board .start-btn-box button {
+      display: inline-block;
+      padding: .8rem 2.2rem;
+      border: none;
+      border-radius: .4rem;
+      background: white;
+      transition: all .3s;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+      color: #333333;
+      font-size: 1.6rem;
+      font-weight: bold;
+      cursor: pointer; }
+    .section-game-board .start-btn-box button::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: .4rem;
+      background: white;
+      transition: all .4s; }
+    .section-game-board .start-btn-box button:hover {
+      transform: translateY(-0.4rem);
+      box-shadow: 0 1rem 1rem rgba(51, 51, 51, 0.7); }
+    .section-game-board .start-btn-box button:active {
+      transform: translateY(0);
+      box-shadow: 0 1rem 1rem rgba(51, 51, 51, 0.3); }
+    .section-game-board .start-btn-box button:hover::before {
+      transform: scale(1.8);
+      opacity: 0; }
+  .section-game-board .rules-heading {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background: transparent;
+    border-radius: .8rem 0 .8rem 0;
+    display: flex; }
+    .section-game-board .rules-heading span {
+      padding: .4rem 2rem;
+      background: white;
+      border-bottom-right-radius: .8rem;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      transition: box-shadow .4s; }
+      .section-game-board .rules-heading span:hover {
+        box-shadow: 0 1rem 1rem rgba(51, 51, 51, 0.6); }
+  .section-game-board .rules-text {
+    flex: 1 1 100%;
+    text-align: center;
+    background: #ff6b6b;
+    position: relative;
+    margin-left: -1rem;
+    display: none;
+    padding: 1rem 4rem;
+    color: white; }
+
+@keyframes up {
+  100% {
+    transform: translateY(-6rem);
+    opacity: 1; } }
+.coin-transition {
+  transform: rotateY(360deg); }
+
+.myClass {
+  display: block; }
+
+.coin-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center; }
+  .coin-box .coin {
+    opacity: 0;
+    margin: 0 4rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff; }
+  .coin-box .heads {
+    background: #0abde3; }
+  .coin-box .toss-coin-img {
+    opacity: 0;
+    align-self: flex-end;
+    width: 30%;
+    transition: all 1s; }
+    .coin-box .toss-coin-img img {
+      padding: 2rem;
+      max-width: 100%; }
+  .coin-box .tails {
+    background: #ff6b6b; }
+
+.game-board-layer {
+  transform: scale(0);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7));
+  transition: all 1s; }
+  .game-board-layer__heading-box {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); }
+    .game-board-layer__heading-box h2 {
+      margin-bottom: 4.5rem;
+      font-size: 3.5rem;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s; }
+    .game-board-layer__heading-box button {
+      padding: .8rem 2.2rem;
+      border: none;
+      -webkit-border-radius: 1rem;
+      -moz-border-radius: 1rem;
+      border-radius: 1rem;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -ms-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s;
+      box-shadow: 0 0.7rem 1rem rgba(51, 51, 51, 0.8);
+      outline: none;
+      font-size: 2rem;
+      margin-bottom: 2rem; }
+      .game-board-layer__heading-box button:hover {
+        -webkit-transform: translateY(-0.4rem);
+        -moz-transform: translateY(-0.4rem);
+        -ms-transform: translateY(-0.4rem);
+        -o-transform: translateY(-0.4rem);
+        transform: translateY(-0.4rem);
+        outline: none;
+        box-shadow: 0 0.4rem 1rem 0.6rem rgba(51, 51, 51, 0.8); }
+      .game-board-layer__heading-box button:active {
+        -webkit-transform: translateY(0.2rem);
+        -moz-transform: translateY(0.2rem);
+        -ms-transform: translateY(0.2rem);
+        -o-transform: translateY(0.2rem);
+        transform: translateY(0.2rem);
+        outline: none;
+        box-shadow: 0 0.4rem 1rem rgba(51, 51, 51, 0.8); }
+
+.p-field {
+  position: relative;
+  background: whitesmoke;
+  flex: 1;
+  text-align: center;
+  padding: 4rem 0; }
+  .p-field__heading {
+    font-size: 3rem;
+    padding: 2rem 0; }
+    .p-field__heading .red-dot {
+      display: inline-block;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      background: darkred; }
+  .p-field__total-score-text {
+    font-size: 2.2rem; }
+  .p-field__total-score {
+    font-size: 2.2rem;
+    padding-top: 1rem; }
+  .p-field__dice {
+    width: 20%;
+    margin: auto; }
+    .p-field__dice--img {
+      box-shadow: 0 0 1rem rgba(51, 51, 51, 0.4);
+      margin: 5rem 0;
+      width: 100%;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s; }
+  .p-field .roll-dice-btn__link {
+    outline: none;
+    color: #00d2d3;
+    transition: all .3s;
+    font-size: 2rem;
+    cursor: pointer; }
+    .p-field .roll-dice-btn__link:hover .roll-dice-btn__icon {
+      transform: translateX(-0.5rem) rotate(180deg); }
+  .p-field .roll-dice-btn__icon {
+    transition: all .4s; }
+  .p-field .roll-dice-btn__hold {
+    display: block;
+    outline: none;
+    margin-top: 1.5rem; }
+
+.rotate-item {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg); }
+
+.frozen {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(87, 101, 116, 0.2), rgba(87, 101, 116, 0.8)); }
+
+/*# sourceMappingURL=styles.css.map */

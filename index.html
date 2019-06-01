@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roll The Dice</title>
+    <!--    Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!--    CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<section class="section-toss-coin">
+    <h2>WHO WILL BE FIRST ?</h2>
+    <article class="coin-box">
+        <div class="coin heads">
+            HEADS
+        </div>
+        <div class="toss-coin-img">
+            <img src="images/PinClipart.com_coins-clipart_326669.png" alt="toss coin img">
+        </div>
+        <div class="coin tails">
+            TAILS
+        </div>
+    </article>
+</section>
+
+<div class="game-board-layer">
+    <div class="game-board-layer__heading-box">
+        <h2>PLAYER 1 WIN!</h2>
+        <button class="start-btn" type="button">NEW GAME</button>
+    </div>
+</div>
+
+<section class="section-game-board">
+
+    <h1 class="heading-primary">
+        Roll the dice
+    </h1>
+    <div class="start-btn-box">
+        <button type="button">START GAME</button>
+    </div>
+
+    <div class="rules-heading" ><span>rules</span>
+        <div class="rules-text" id="myRules"><p>The first player who make 20 points or above is the winner.</p>
+            <p>If you throw 1 it's the next players turn.</p>
+            <p>Good Luck :)</p>
+        </div>
+    </div>
+
+
+    <article class="p-field p-field--1 active-field">
+        <div class="p-frozen-layer p-field--1__frozen-layer frozen"></div>
+        <h3 class="p-field__heading p-field--1__heading">Player 1 <span></span></h3>
+        <p class="p-field__total-score-text">Scores</p>
+        <div class="p-field__total-score p-field--1__total-score">
+            0
+        </div>
+        <div class="p-field__dice p-field--1__dice">
+            <img src="images/dice-all-sides/dice-1.png" alt="p1 dice photo"
+                 class="p-field__dice--img p-field--1__dice--img">
+        </div>
+        <div class="roll-dice-btn p-1-roll-dice-btn">
+            <a class="roll-dice-btn__link">
+                <i class="fas fa-spinner roll-dice-btn__icon"></i>
+                <span class="roll-dice-btn__text">ROLL DICE</span>
+            </a>
+        </div>
+    </article>
+
+    <article class="p-field p-field--2">
+        <div class="p-frozen-layer p-field--2__frozen-layer frozen"></div>
+        <h3 class="p-field__heading p-field--2__heading">Player 2 <span></span></h3>
+        <p class="p-field__total-score-text">Scores</p>
+        <div class="p-field__total-score p-field--2__total-score">
+            0
+        </div>
+        <div class="p-field__dice p-field--2__dice">
+            <img src="images/dice-all-sides/dice-1.png" alt="p2 dice photo"
+                 class="p-field__dice--img p-field--2__dice--img">
+        </div>
+        <div class="roll-dice-btn p-1-roll-dice-btn" role="button">
+            <a class="roll-dice-btn__link">
+                <i class="fas fa-spinner roll-dice-btn__icon"></i>
+                <span class="roll-dice-btn__text">ROLL DICE</span>
+            </a>
+
+        </div>
+    </article>
+</section>
+<!--SCRIPTS-->
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/demo.js"></script>
+</body>
+</html>
